@@ -1,5 +1,5 @@
 {
-  "name": "morphdom",
+  "name": "@arve.knudsen/morphdom",
   "description": "Morph a DOM tree to another DOM tree (no virtual DOM needed)",
   "main": "src/index.js",
   "scripts": {
@@ -15,11 +15,11 @@
     "prepublish": "./prepublish.sh",
     "start": "node examples/server.js"
   },
-  "author": "Patrick Steele-Idem <pnidem@gmail.com>",
+  "author": "Patrick Steele-Idem <pnidem@gmail.com>, Arve Knudsen <arve.knudsen@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/patrick-steele-idem/morphdom.git"
+    "url": "https://github.com/aknuds1/morphdom.git"
   },
   "devDependencies": {
     "async": "^2.0.0",
@@ -42,7 +42,7 @@
     "virtual-dom": "^2.1.1"
   },
   "dependencies": {},
-  "version": "2.2.1",
+  "version": "2.3.0",
   "keywords": [
     "dom",
     "diff",
