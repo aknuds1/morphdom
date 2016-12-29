@@ -106,8 +106,11 @@ var specialElHandlers = {
     SELECT: function(fromEl) {
       for (var i = 0; i < fromEl.children.length; ++i) {
         var child = fromEl.children[i];
-        if (child.tagName.toLowerCase() === 'option' && child.getAttribute('selected') !== false) {
-          fromEl.selectedIndex = i;
+        if (child.tagName.toLowerCase() === 'option') {
+          var selectedValue = child.getAttribute('selected');
+          if (selectedValue != null && (selectedValue === 'true' || selectedValue === 'selected')) {
+            fromEl.selectedIndex = i;
+          }
         }
       }
     }

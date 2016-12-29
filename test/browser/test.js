@@ -925,7 +925,7 @@ describe('morphdom' , function() {
       el2.appendChild(node('option', 'child1'));
       el2.appendChild(node('option', 'child2', {attrs: {'selected': true,},}));
 
-      morphdom(el1, el2, {debug: true});
+      morphdom(el1, el2);
 
       expect(el1.selectedIndex).to.equal(1);
     });
