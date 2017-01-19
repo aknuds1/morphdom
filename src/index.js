@@ -77,7 +77,9 @@ var specialElHandlers = {
         syncBooleanAttrProp(fromEl, toEl, 'checked');
         syncBooleanAttrProp(fromEl, toEl, 'disabled');
 
-        if (fromEl.value !== toEl.value) {
+        // Don't try to copy the value for file inputs, since it shouldn't be modified
+        // programmatically
+        if (fromEl.type !== 'file' && fromEl.value !== toEl.value) {
             fromEl.value = toEl.value;
         }
 
