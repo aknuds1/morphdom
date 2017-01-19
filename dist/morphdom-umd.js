@@ -78,7 +78,9 @@ var specialElHandlers = {
         syncBooleanAttrProp(fromEl, toEl, 'checked');
         syncBooleanAttrProp(fromEl, toEl, 'disabled');
 
-        if (fromEl.value !== toEl.value) {
+        // Don't try to copy the value for file inputs, since it shouldn't be modified
+        // programmatically
+        if (fromEl.type !== 'file' && fromEl.value !== toEl.value) {
             fromEl.value = toEl.value;
         }
 
@@ -424,12 +426,15 @@ function morphdom(fromNode, toNode, options) {
                 curToNodeKey = getNodeKey(curToNodeChild);
 
                 while (curFromNodeChild) {
+                    fromNextSibling = curFromNodeChild.nextSibling;
+
                     if (curToNodeChild.isSameNode && curToNodeChild.isSameNode(curFromNodeChild)) {
-                        return;
+                        curToNodeChild = toNextSibling;
+                        curFromNodeChild = fromNextSibling;
+                        continue outer;
                     }
 
                     curFromNodeKey = getNodeKey(curFromNodeChild);
-                    fromNextSibling = curFromNodeChild.nextSibling;
 
                     var curFromNodeType = curFromNodeChild.nodeType;
 
