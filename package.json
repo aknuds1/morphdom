@@ -1,5 +1,6 @@
 {
   "name": "@arve.knudsen/morphdom",
+  "version": "2.2.2",
   "description": "Morph a DOM tree to another DOM tree (no virtual DOM needed)",
   "main": "src/index.js",
   "scripts": {
