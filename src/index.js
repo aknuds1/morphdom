@@ -80,13 +80,13 @@ var specialElHandlers = {
         // Don't try to copy the value for file inputs, since it shouldn't be modified
         // programmatically
         if (fromEl.type !== 'file') {
-          if ( && fromEl.value !== toEl.value) {
-              fromEl.value = toEl.value;
-          }
+            if (fromEl.value !== toEl.value) {
+                fromEl.value = toEl.value;
+            }
 
-          if (!hasAttributeNS(toEl, null, 'value')) {
-              fromEl.removeAttribute('value');
-          }
+            if (!hasAttributeNS(toEl, null, 'value')) {
+                fromEl.removeAttribute('value');
+            }
         }
     },
 
