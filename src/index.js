@@ -61,13 +61,6 @@ function syncBooleanAttrProp(fromEl, toEl, name) {
 
 var specialElHandlers = {
     /**
-     * Needed for IE. Apparently IE doesn't think that "selected" is an
-     * attribute when reading over the attributes using selectEl.attributes
-     */
-    OPTION: function(fromEl, toEl) {
-        syncBooleanAttrProp(fromEl, toEl, 'selected');
-    },
-    /**
      * The "value" attribute is special for the <input> element since it sets
      * the initial value. Changing the "value" attribute without changing the
      * "value" property will have no effect since it is only used to the set the
